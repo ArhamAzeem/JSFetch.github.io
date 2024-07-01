@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        body{
+            background-color: silver;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 80px;
+        }
+
+        .d{
+            width: 60%;
+            border: 1px solid white;
+            border-radius: 30px;
+            background-color: azure;
+            padding: 40px 40px;
+
+        }
+
+        form{
+            margin: 20px;
+        }
+
+        input{
+            width: 100%;
+            padding: 9px;
+            border-radius: 30px;
+            border: 1px solid white;
+            box-shadow: 5px 5px 5px black;
+        }
+
+        button{
+            background-color: burlywood;
+            width: 97%;
+            padding: 3px;
+            margin-left: 22px;
+            border-radius: 30px;
+            border: 1px solid burlywood;
+            box-shadow: 5px 5px 5px black;
+            font-size: 2vh;
+        }
+
+        label{
+            font-size: 2.5vh;
+        }
+
+        table{
+            width: 97%;
+            padding: 3px;
+            margin-left: 22px;
+            margin-top: 90px;
+            border-radius: 30px;
+            border: 1px solid cadetblue;
+            background-color: whitesmoke;
+        }
+
+        th{
+            font-size: 2.25vh;
+        }
+
+        td{
+            padding: 10px 10px;
+            padding-left: 20px;
+            align-content: center;
+        }
+      
+        input::placeholder{
+            font-size: 2.25vh;
+            color:darkgray;
+            margin: 5px 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="d">
+    <form>
+        <label>Movie:</label>
+        <input type="text" id="name" placeholder="Enter movie or series">
+        <br><br>
+        <label>Release:</label>
+        <input type="text" id="car" placeholder="Enter release date">
+        <br><br>
+        <label>Genre:</label>
+        <input type="text" id="model" placeholder="Enter genre">
+        <br><br>
+        <label>Rating:</label>
+        <input type="text" id="color" placeholder="Enter rating">
+        <br><br>
+        <label>Available on:</label>
+        <input type="text" id="price" placeholder="Enter platform">
+        <br><br>
+    </form>
+        <button onclick="store()">Submit</button>
+    
+        <table>
+            <thead>
+                <th>Movie</th>
+                <th>Release</th>
+                <th>Genre</th>
+                <th>Rating</th>
+                <th>Available on</th>
+            </thead>
+            <tbody id="specs">
+
+            </tbody>
+        </table>
+    </div>
+        <script>
+            function store(){
+            var o_wner=document.getElementById("name").value;
+            var c_ar=document.getElementById("car").value;
+            var m_odel=document.getElementById("model").value;
+            var c_olor=document.getElementById("color").value;
+            var p_rice=document.getElementById("price").value;
+
+            document.querySelector("#specs").innerHTML+=`
+            <tr>
+                <td>${o_wner}</td>
+                <td>${c_ar}</td>
+                <td>${m_odel}</td>
+                <td>${c_olor}</td>
+                <td>${p_rice}</td>
+            </tr>
+            `;
+        }
+        </script>
+</body>
+</html>
